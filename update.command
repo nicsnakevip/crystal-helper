@@ -14,7 +14,16 @@ echo "检查并安装所需的Python包..."
 pip install pandas openpyxl gitpython --quiet
 
 # 运行Python脚本
-python scripts/auto_update.py
+echo "开始处理数据..."
+python scripts/process_crystal_data.py
+
+# 强制更新Git仓库
+echo "更新Git仓库..."
+git add -A
+git commit -m "自动更新数据 - $(date '+%Y-%m-%d %H:%M:%S')"
+git push
+
+echo "更新完成！"
 
 # 等待用户按回车键后退出
 echo -e "\n按回车键退出..."
