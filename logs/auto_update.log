@@ -41,3 +41,41 @@ M .DS_Store
  M data/raw/.DS_Store
  M logs/auto_update.log
 ?? scripts/__pycache__/process_crystal_data.cpython-312.pyc
+2025-04-28 09:14:04,999 - INFO - 命令执行成功: git add .
+2025-04-28 09:14:05,025 - INFO - 命令执行成功: git commit -m "自动更新数据 - 2025-04-28 09:14:04"
+2025-04-28 09:14:05,025 - INFO - 输出信息: [main f837644] 自动更新数据 - 2025-04-28 09:14:04
+ 5 files changed, 31 insertions(+)
+ create mode 100644 scripts/__pycache__/process_crystal_data.cpython-312.pyc
+
+2025-04-28 09:14:06,776 - INFO - 命令执行成功: git push
+2025-04-28 09:14:06,776 - INFO - Git仓库更新完成
+2025-04-28 09:14:06,776 - INFO - 自动更新完成
+2025-04-28 16:38:12,436 - INFO - 开始执行自动更新...
+2025-04-28 16:38:12,436 - INFO - 开始处理Excel数据...
+2025-04-28 16:38:12,595 - INFO - NumExpr defaulting to 14 threads.
+2025-04-28 16:38:12,706 - INFO - 开始处理Excel数据...
+2025-04-28 16:38:12,802 - ERROR - 处理Excel数据时出错: 'int' object has no attribute 'split'
+2025-04-28 16:38:12,803 - ERROR - 程序执行失败: 'int' object has no attribute 'split'
+2025-04-28 16:38:39,288 - INFO - 开始执行自动更新...
+2025-04-28 16:38:39,288 - INFO - 开始处理Excel数据...
+2025-04-28 16:38:39,390 - INFO - NumExpr defaulting to 14 threads.
+2025-04-28 16:38:39,484 - INFO - 开始处理Excel数据...
+2025-04-28 16:38:39,568 - ERROR - 处理Excel数据时出错: 'int' object has no attribute 'split'
+2025-04-28 16:38:39,568 - ERROR - 程序执行失败: 'int' object has no attribute 'split'
+2025-04-28 16:39:58,759 - INFO - 开始执行自动更新...
+2025-04-28 16:39:58,759 - INFO - 开始处理Excel数据...
+2025-04-28 16:39:58,863 - INFO - NumExpr defaulting to 14 threads.
+2025-04-28 16:39:58,957 - INFO - 开始处理Excel数据...
+2025-04-28 16:39:59,039 - INFO - 数据处理完成，共 25 条记录
+2025-04-28 16:39:59,039 - INFO - 开始保存JSON文件...
+2025-04-28 16:39:59,039 - INFO - 文件已保存到: /Users/wei/maiterial/kaifa/crystal-helper/data/processed/crystal_data.json
+2025-04-28 16:39:59,039 - INFO - 数据处理完成
+2025-04-28 16:39:59,039 - INFO - 开始更新Git仓库...
+2025-04-28 16:39:59,058 - INFO - 检测到以下文件变更:
+M .DS_Store
+ M data/.DS_Store
+ M data/processed/crystal_data.json
+ M data/raw/.DS_Store
+ M "data/raw/\346\260\264\346\231\266.xlsx"
+ M logs/auto_update.log
+ M scripts/__pycache__/process_crystal_data.cpython-312.pyc
