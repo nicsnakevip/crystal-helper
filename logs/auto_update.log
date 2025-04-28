@@ -10,3 +10,34 @@
 M data/.DS_Store
 ?? logs/auto_update.log
 ?? scripts/__pycache__/
+2025-04-28 09:04:38,096 - INFO - 命令执行成功: git add .
+2025-04-28 09:04:38,121 - INFO - 命令执行成功: git commit -m "自动更新数据 - 2025-04-28 09:04:38"
+2025-04-28 09:04:38,121 - INFO - 输出信息: [main ce7f81f] 自动更新数据 - 2025-04-28 09:04:38
+ 3 files changed, 12 insertions(+)
+ create mode 100644 logs/auto_update.log
+ create mode 100644 scripts/__pycache__/process_crystal_data.cpython-310.pyc
+
+2025-04-28 09:04:39,759 - INFO - 命令执行成功: git push
+2025-04-28 09:04:39,759 - INFO - Git仓库更新完成
+2025-04-28 09:04:39,759 - INFO - 自动更新完成
+2025-04-28 09:13:01,793 - INFO - 开始执行自动更新...
+2025-04-28 09:13:01,794 - INFO - 开始处理Excel数据...
+2025-04-28 09:13:02,051 - INFO - NumExpr defaulting to 14 threads.
+2025-04-28 09:13:02,200 - INFO - 开始处理Excel数据...
+2025-04-28 09:13:02,201 - ERROR - 处理Excel数据时出错: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-04-28 09:13:02,201 - ERROR - 程序执行失败: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2025-04-28 09:14:04,290 - INFO - 开始执行自动更新...
+2025-04-28 09:14:04,290 - INFO - 开始处理Excel数据...
+2025-04-28 09:14:04,404 - INFO - NumExpr defaulting to 14 threads.
+2025-04-28 09:14:04,500 - INFO - 开始处理Excel数据...
+2025-04-28 09:14:04,958 - INFO - 数据处理完成，共 24 条记录
+2025-04-28 09:14:04,958 - INFO - 开始保存JSON文件...
+2025-04-28 09:14:04,958 - INFO - 文件已保存到: /Users/wei/maiterial/kaifa/crystal-helper/data/processed/crystal_data.json
+2025-04-28 09:14:04,958 - INFO - 数据处理完成
+2025-04-28 09:14:04,958 - INFO - 开始更新Git仓库...
+2025-04-28 09:14:04,979 - INFO - 检测到以下文件变更:
+M .DS_Store
+ M data/.DS_Store
+ M data/raw/.DS_Store
+ M logs/auto_update.log
+?? scripts/__pycache__/process_crystal_data.cpython-312.pyc
