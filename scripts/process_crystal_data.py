@@ -21,6 +21,13 @@ logging.basicConfig(
     ]
 )
 
+def clean_value(value):
+    """清理并转换数据值"""
+    if pd.isna(value):  # 处理空值
+        return ''
+    # 将所有值转换为字符串
+    return str(value).strip()
+
 def process_excel_data(excel_file):
     """处理Excel数据"""
     try:
@@ -29,7 +36,9 @@ def process_excel_data(excel_file):
         
         # 清理数据
         df = df.fillna('')
-        df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+        # 将所有列的数据转换为字符串
+        for col in df.columns:
+            df[col] = df[col].apply(clean_value)
         
         # 创建结果列表
         result = []
@@ -37,17 +46,21 @@ def process_excel_data(excel_file):
         # 处理每一行数据
         for _, row in df.iterrows():
             if row['c']:  # 如果C列有值
-                # 分割C列的多个关键词
-                keywords = [k.strip() for k in row['c'].split('，') if k.strip()]
-                
-                # 为每个关键词创建一条记录
-                for keyword in keywords:
-                    item = {
-                        'name': row['a'],  # A列作为分类路径
-                        'category': row['b'],  # B列作为类目
-                        'searchKey': keyword  # C列的单个关键词
-                    }
-                    result.append(item)
+                try:
+                    # 分割C列的多个关键词
+                    keywords = [k.strip() for k in row['c'].split('，') if k.strip()]
+                    
+                    # 为每个关键词创建一条记录
+                    for keyword in keywords:
+                        item = {
+                            'name': row['a'],  # A列作为分类路径
+                            'category': row['b'],  # B列作为类目
+                            'searchKey': keyword  # C列的单个关键词
+                        }
+                        result.append(item)
+                except Exception as e:
+                    logging.warning(f"处理行数据时出错，跳过此行: {row.to_dict()} - 错误: {str(e)}")
+                    continue
         
         return result
         
