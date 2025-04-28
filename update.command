@@ -9,6 +9,10 @@ cd "$SCRIPT_DIR"
 # 设置Python环境（如果需要的话）
 # source /path/to/your/venv/bin/activate  # 如果您使用虚拟环境，取消这行注释
 
+# 检查并安装所需的Python包
+echo "检查并安装所需的Python包..."
+pip install pandas openpyxl gitpython --quiet
+
 # 运行Python脚本
 python scripts/auto_update.py
 
