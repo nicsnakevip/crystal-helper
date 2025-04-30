@@ -23,28 +23,6 @@ git add -A
 git commit -m "自动更新数据 - $(date '+%Y-%m-%d %H:%M:%S')"
 git push
 
-# 同步到crystal_data仓库
-echo "同步到crystal_data仓库..."
-CRYSTAL_DATA_DIR="/Users/wei/maiterial/kaifa/crystal_data"
-
-# 如果crystal_data目录不存在，则克隆
-if [ ! -d "$CRYSTAL_DATA_DIR" ]; then
-    echo "克隆crystal_data仓库..."
-    cd /Users/wei/maiterial/kaifa
-    git clone https://github.com/nicsnakevip/crystal_data.git
-fi
-
-# 复制文件到crystal_data仓库
-echo "复制文件..."
-cp "$SCRIPT_DIR/data/processed/crystal_data.json" "$CRYSTAL_DATA_DIR/"
-cp "$SCRIPT_DIR/src/userscript/crystal_helper.user.js" "$CRYSTAL_DATA_DIR/"
-
-# 提交并推送更改
-cd "$CRYSTAL_DATA_DIR"
-git add crystal_data.json crystal_helper.user.js
-git commit -m "自动更新数据 - $(date '+%Y-%m-%d %H:%M:%S')"
-git push
-
 echo "更新完成！"
 
 # 等待用户按回车键后退出
