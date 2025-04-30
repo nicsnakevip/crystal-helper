@@ -23,8 +23,9 @@ git add -A
 git commit -m "自动更新数据 - $(date '+%Y-%m-%d %H:%M:%S')"
 git push
 
-echo "更新完成！"
+echo "更新完成！3秒后自动关闭..."
+sleep 3
 
-# 等待用户按回车键后退出
-echo -e "\n按回车键退出..."
-read 
+# 自动关闭终端
+osascript -e 'tell application "Terminal" to close (every window whose name contains ".command")' &
+exit 0 
